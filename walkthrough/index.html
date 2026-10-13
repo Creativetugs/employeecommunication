@@ -5,26 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PCMP rollout walkthrough | Money$ense</title>
   <meta name="description" content="Click through the eight employee communications that lead up to PCMP benefits becoming active.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #1c2430;
-      --muted: #5c6b7c;
-      --line: #e4ddd4;
-      --paper: #f4f0ea;
-      --white: #fff;
-      --navy: #1b3a4b;
-      --green: #3f7d55;
+      --blue: #002a65;
+      --green: #56814f;
+      --green-2: #96d18c;
+      --green-3: #72a967;
+      --bg: #f8f9fb;
+      --surface: #e8edf3;
+      --ink: #002a65;
+      --muted: #636363;
+      --line: #e8edf3;
+      --paper: #f8f9fb;
+      --white: #ffffff;
+      --navy: #002a65;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; height: 100%; }
     body {
       color: var(--ink);
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      background: var(--paper);
+      font-family: Inter, "Segoe UI", sans-serif;
+      background: var(--bg);
       -webkit-font-smoothing: antialiased;
     }
     button, input { font: inherit; color: inherit; }
-    ::selection { background: #d9ead8; }
+    h1, h2, h3, .brand, .kicker, .nav-item strong { font-family: "Plus Jakarta Sans", Inter, sans-serif; }
+    ::selection { background: #96d18c; }
 
     .app {
       min-height: 100%;
@@ -52,7 +61,7 @@
     .fields { display: flex; gap: 8px; align-items: center; }
     .fields input {
       width: 180px;
-      border: 1px solid #ddd4c8;
+      border: 1px solid var(--surface);
       background: #fff;
       border-radius: 999px;
       padding: 8px 12px;
@@ -147,7 +156,7 @@
       line-height: 1.05;
       letter-spacing: -0.035em;
     }
-    .purpose { margin: 0 0 16px; max-width: 680px; color: #3e4d5c; font-size: 17px; line-height: 1.45; }
+    .purpose { margin: 0 0 16px; max-width: 680px; color: var(--muted); font-size: 17px; line-height: 1.45; }
     .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
     .meta li {
       background: #fff;
@@ -155,7 +164,7 @@
       border-radius: 999px;
       padding: 6px 10px;
       font-size: 13px;
-      color: #3e4d5c;
+      color: var(--muted);
     }
     .meta b { color: var(--navy); }
     .split {
@@ -166,16 +175,16 @@
     }
     .mail, .piece {
       background: #fff;
-      border: 1px solid #e7e0d6;
+      border: 1px solid var(--surface);
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(60, 40, 20, 0.05);
+      box-shadow: 0 10px 30px rgba(0, 42, 101, 0.06);
     }
     .mail-bar, .piece-bar {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 10px 14px;
-      border-bottom: 1px solid #f0ebe4;
+      border-bottom: 1px solid var(--surface);
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
@@ -183,23 +192,23 @@
       text-transform: uppercase;
     }
     .dots { display: flex; gap: 5px; }
-    .dots i { width: 8px; height: 8px; border-radius: 50%; background: #e4ddd4; display: block; }
+    .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--green-2); display: block; }
     .mail-body, .piece-body { padding: 16px 18px 18px; }
     .line { display: grid; grid-template-columns: 72px 1fr; gap: 8px; margin: 0 0 6px; font-size: 14px; }
     .line span { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding-top: 2px; }
-    .letter { margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0ebe4; font-size: 15px; line-height: 1.55; color: #243140; }
+    .letter { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--surface); font-size: 15px; line-height: 1.55; color: var(--blue); }
     .letter p { margin: 0 0 10px; }
     .letter ul, .letter ol { margin: 0 0 10px; padding-left: 18px; }
     .field, body:not(.has-company) [data-token="company"], body:not(.has-date) [data-token="date"] {
-      background: #eef6ea;
-      color: #245c38;
+      background: #e8edf3;
+      color: var(--blue);
       font-weight: 700;
       border-radius: 4px;
       padding: 0 0.2em;
     }
     .copy {
       margin-top: 8px;
-      border: 1px solid #ddd4c8;
+      border: 1px solid var(--surface);
       background: #fff;
       border-radius: 999px;
       padding: 7px 12px;
@@ -208,11 +217,12 @@
       cursor: pointer;
     }
     .piece-body h3 { margin: 0 0 8px; font-size: 26px; letter-spacing: -0.03em; color: var(--navy); }
-    .piece-body .lede, .piece-body li { color: #3e4d5c; font-size: 14.5px; line-height: 1.4; }
+    .piece-body .lede, .piece-body li { color: var(--muted); font-size: 14.5px; line-height: 1.4; }
     .piece-body ul { margin: 8px 0 0; padding-left: 18px; }
-    .doc { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid #f0ebe4; font-size: 14px; }
+    .doc { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--surface); font-size: 14px; }
     .doc span { color: var(--muted); }
-    .why { margin: 16px 0 0; color: #3e4d5c; font-size: 14.5px; line-height: 1.45; }
+    .why { margin: 16px 0 0; color: var(--muted); font-size: 14.5px; line-height: 1.45; }
+    .why strong { color: var(--green); }
     .watermark {
       position: absolute;
       top: -18px;
@@ -233,7 +243,7 @@
       margin-top: 18px;
     }
     .pager button {
-      border: 1px solid #ddd4c8;
+      border: 1px solid var(--surface);
       background: #fff;
       border-radius: 999px;
       padding: 10px 14px;
@@ -242,7 +252,7 @@
     }
     .pager button:disabled { opacity: 0.4; cursor: default; }
     .pager p { margin: 0; color: var(--muted); font-size: 13px; font-weight: 700; }
-    .fine { margin: 18px 0 0; color: #7b8794; font-size: 12.5px; line-height: 1.45; max-width: 760px; }
+    .fine { margin: 18px 0 0; color: var(--muted); font-size: 12.5px; line-height: 1.45; max-width: 760px; }
     .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 
     @media (max-width: 980px) {
@@ -267,7 +277,7 @@
 <body>
   <div class="app">
     <header class="top">
-      <a class="brand" href="#general-announcement">Money<i>$</i>ense</a>
+      <a class="brand" href="#PCMP-announcement">Money<i>$</i>ense</a>
       <p>Click through the 30 days. One communication at a time.</p>
       <form class="fields" id="personalize" autocomplete="off">
         <input id="company-name" type="text" maxlength="80" placeholder="Company name" aria-label="Company name">
@@ -281,20 +291,20 @@
         <h1>30 days to benefits</h1>
         <p class="note">Eight messages, from the first announcement to the morning PCMP is active.</p>
         <div class="rail-list" id="rail-list">
-          <button class="nav-item" type="button" data-step="PCMP-announcement" style="--accent:#1f62b0"><span class="nav-day">D-30</span><span><strong>PCMP Announcement</strong><em>All employees</em></span></button>
-          <button class="nav-item" type="button" data-step="eligibility-notices" style="--accent:#1f62b0"><span class="nav-day">D-30</span><span><strong>Eligibility Notices</strong><em>Eligible employees only</em></span></button>
-          <button class="nav-item" type="button" data-step="information-sessions" style="--accent:#2b87a4"><span class="nav-day">D-26</span><span><strong>Information Sessions</strong><em>Live, plus a replay</em></span></button>
-          <button class="nav-item" type="button" data-step="download-moneysense" style="--accent:#159688"><span class="nav-day">D-21</span><span><strong>Download Money$ense</strong><em>App and wellness group</em></span></button>
-          <button class="nav-item" type="button" data-step="online-orientation" style="--accent:#628832"><span class="nav-day">D-14</span><span><strong>Online Orientation</strong><em>Short education course</em></span></button>
-          <button class="nav-item" type="button" data-step="summary-plan-description" style="--accent:#74782e"><span class="nav-day">D-10</span><span><strong>Summary Plan Description</strong><em>Official plan document</em></span></button>
-          <button class="nav-item" type="button" data-step="final-reminder" style="--accent:#a07b18"><span class="nav-day">D-7</span><span><strong>Final Reminder</strong><em>One-week checklist</em></span></button>
-          <button class="nav-item" type="button" data-step="benefits-active" style="--accent:#188a48"><span class="nav-day">D0</span><span><strong>Benefits Active</strong><em>The effective date</em></span></button>
+          <button class="nav-item" type="button" data-step="PCMP-announcement" style="--accent:#002a65"><span class="nav-day">D-30</span><span><strong>PCMP Announcement</strong><em>All employees</em></span></button>
+          <button class="nav-item" type="button" data-step="eligibility-notices" style="--accent:#002a65"><span class="nav-day">D-30</span><span><strong>Eligibility Notices</strong><em>Eligible employees only</em></span></button>
+          <button class="nav-item" type="button" data-step="information-sessions" style="--accent:#56814f"><span class="nav-day">D-26</span><span><strong>Information Sessions</strong><em>Live, plus a replay</em></span></button>
+          <button class="nav-item" type="button" data-step="download-moneysense" style="--accent:#002a65"><span class="nav-day">D-21</span><span><strong>Download Money$ense</strong><em>App and wellness group</em></span></button>
+          <button class="nav-item" type="button" data-step="online-orientation" style="--accent:#56814f"><span class="nav-day">D-14</span><span><strong>Online Orientation</strong><em>Short education course</em></span></button>
+          <button class="nav-item" type="button" data-step="summary-plan-description" style="--accent:#002a65"><span class="nav-day">D-10</span><span><strong>Summary Plan Description</strong><em>Official plan document</em></span></button>
+          <button class="nav-item" type="button" data-step="final-reminder" style="--accent:#56814f"><span class="nav-day">D-7</span><span><strong>Final Reminder</strong><em>One-week checklist</em></span></button>
+          <button class="nav-item" type="button" data-step="benefits-active" style="--accent:#56814f"><span class="nav-day">D0</span><span><strong>Benefits Active</strong><em>The effective date</em></span></button>
         </div>
       </nav>
 
       
       <main class="stage" id="stage">
-        <article class="step" id="PCMP-announcement" style="--accent:#1f62b0" data-mark="30">
+        <article class="step" id="PCMP-announcement" style="--accent:#002a65" data-mark="30">
           <p class="kicker">Day 30 · Message 1 of 8</p>
           <h2>PCMP Announcement</h2>
           <p class="purpose"><strong>Purpose:</strong> Introduce PCMP to all employees.</p>
@@ -326,7 +336,7 @@
           </div>
         </article>
 
-        <article class="step" id="eligibility-notices" style="--accent:#1f62b0" data-mark="30" hidden>
+        <article class="step" id="eligibility-notices" style="--accent:#002a65" data-mark="30" hidden>
           <p class="kicker">Day 30 · Message 2 of 8</p>
           <h2>Eligibility Notices</h2>
           <p class="purpose">Send individual notices of eligibility and an initial Summary Plan Description.</p>
@@ -356,7 +366,7 @@
           </div>
         </article>
 
-        <article class="step" id="information-sessions" style="--accent:#2b87a4" data-mark="26" hidden>
+        <article class="step" id="information-sessions" style="--accent:#56814f" data-mark="26" hidden>
           <p class="kicker">Day 26 · Message 3 of 8</p>
           <h2>Information Sessions</h2>
           <p class="purpose">Invite employees to a live session, with a replay if they cannot attend.</p>
@@ -386,7 +396,7 @@
           </div>
         </article>
 
-        <article class="step" id="download-moneysense" style="--accent:#159688" data-mark="21" hidden>
+        <article class="step" id="download-moneysense" style="--accent:#002a65" data-mark="21" hidden>
           <p class="kicker">Day 21 · Message 4 of 8</p>
           <h2>Download Money$ense</h2>
           <p class="purpose">Encourage employees to download the Money$ense app and join the PCMP wellness group.</p>
@@ -420,7 +430,7 @@
           </div>
         </article>
 
-        <article class="step" id="online-orientation" style="--accent:#628832" data-mark="14" hidden>
+        <article class="step" id="online-orientation" style="--accent:#56814f" data-mark="14" hidden>
           <p class="kicker">Day 14 · Message 5 of 8</p>
           <h2>Online Orientation</h2>
           <p class="purpose">Encourage employees to complete the PCMP online education course.</p>
@@ -450,7 +460,7 @@
           </div>
         </article>
 
-        <article class="step" id="summary-plan-description" style="--accent:#74782e" data-mark="10" hidden>
+        <article class="step" id="summary-plan-description" style="--accent:#002a65" data-mark="10" hidden>
           <p class="kicker">Day 10 · Message 6 of 8</p>
           <h2>Summary Plan Description</h2>
           <p class="purpose">Provide the official SPD and remind employees to review plan details.</p>
@@ -479,7 +489,7 @@
           </div>
         </article>
 
-        <article class="step" id="final-reminder" style="--accent:#a07b18" data-mark="7" hidden>
+        <article class="step" id="final-reminder" style="--accent:#56814f" data-mark="7" hidden>
           <p class="kicker">Day 7 · Message 7 of 8</p>
           <h2>Final Reminder</h2>
           <p class="purpose">Remind employees of the effective date and the few steps still open.</p>
@@ -512,7 +522,7 @@
           </div>
         </article>
 
-        <article class="step" id="benefits-active" style="--accent:#188a48" data-mark="0" hidden>
+        <article class="step" id="benefits-active" style="--accent:#56814f" data-mark="0" hidden>
           <p class="kicker">Day 0 · Message 8 of 8</p>
           <h2>Benefits Active</h2>
           <p class="purpose">PCMP is now active for eligible employees.</p>
