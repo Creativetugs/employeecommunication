@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PCMP employee communications | Money$ense</title>
+  <meta name="description" content="See how employees are informed in the 30 days before PCMP benefits begin. Open any of the eight communications to read the sample message and view the piece that goes with it.">
+  <style>
+    :root {
+      --navy: #002a65;
+      --navy-2: #143f73;
+      --green: #56814f;
+      --ink: #17324a;
+      --muted: #526980;
+      --line: #d7e2ee;
+      --card: #f4f8fb;
+      --page: #f3f6fa;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: var(--page);
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: #c9ddf5; }
+    button, input { font: inherit; color: inherit; }
+    a { color: inherit; }
+    img { max-width: 100%; }
+
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: -40px;
+      background: var(--navy);
+      color: #fff;
+      padding: 8px 12px;
+      z-index: 20;
+    }
+    .skip:focus { top: 12px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 28px;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    .brand .word { letter-spacing: -0.03em; }
+    .brand .dol { color: var(--green); }
+    .brand small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .site-nav { display: flex; align-items: center; gap: 18px; }
+    .site-nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 650;
+    }
+    .site-nav a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--navy) !important;
+      color: #fff !important;
+      border-radius: 999px;
+      padding: 8px 14px;
+    }
+    .nav-cta:hover { background: #143f73 !important; color: #fff !important; }
+
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    .hero {
+      background:
+        radial-gradient(700px 280px at 90% 0%, rgba(86, 129, 79, 0.16), transparent 60%),
+        linear-gradient(180deg, #fff 0%, #f7fafc 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      gap: 36px;
+      align-items: center;
+      padding: 54px 0 46px;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 46px;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+    .hero .lead {
+      margin: 16px 0 0;
+      max-width: 620px;
+      color: #3d5670;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 11px 16px;
+      font-weight: 750;
+      font-size: 15px;
+    }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-primary:hover { background: #143f73; }
+    .btn-quiet { background: #fff; color: var(--navy); border: 1px solid #c9d7e6; }
+    .stats {
+      display: flex;
+      gap: 22px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .stats strong {
+      display: block;
+      color: var(--navy);
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+    .stats span { color: var(--muted); font-size: 13px; }
+
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 14px 34px rgba(16, 42, 80, 0.08);
+      padding: 16px 16px 8px;
+    }
+    .hero-card h2 {
+      margin: 2px 8px 10px;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hero-card ol { list-style: none; margin: 0; padding: 0; }
+    .hero-card a {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 8px;
+      align-items: center;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 10px;
+    }
+    .hero-card a:hover { background: var(--card); }
+    .chip {
+      display: inline-flex;
+      justify-content: center;
+      color: #fff;
+      background: var(--accent, var(--navy));
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 750;
+      padding: 4px 0;
+    }
+    .hero-card a span:last-child { color: var(--navy); font-weight: 700; font-size: 14px; }
+
+    .journey { padding: 28px 0 8px; }
+    .journey ol {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .journey li {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px 16px;
+    }
+    .journey b {
+      display: block;
+      color: var(--green);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .journey strong { display: block; color: var(--navy); margin-bottom: 4px; }
+    .journey p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.4; }
+
+    .plan { padding: 28px 0 20px; }
+    .plan-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 14px;
+    }
+    .plan-head h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 32px;
+      letter-spacing: -0.03em;
+    }
+    .plan-head p { margin: 6px 0 0; color: var(--muted); max-width: 640px; line-height: 1.45; }
+
+    .personalize {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: end;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+    .personalize p { margin: 0 8px 0 4px; max-width: 280px; color: var(--muted); font-size: 14px; line-height: 1.35; }
+    .personalize strong { display: block; color: var(--navy); }
+    .personalize label {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: #5c7388;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .personalize input {
+      width: 220px;
+      max-width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #c9d7e6;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 14px;
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 650;
+    }
+    .text-btn, .copy, .step-toggle { cursor: pointer; }
+    .text-btn {
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 750;
+      padding: 8px 4px;
+    }
+    .personalize input:focus-visible,
+    .step-toggle:focus-visible,
+    .copy:focus-visible,
+    .text-btn:focus-visible,
+    .site-nav a:focus-visible,
+    .btn:focus-visible,
+    .hero-card a:focus-visible {
+      outline: 2px solid #1d5eae;
+      outline-offset: 2px;
+    }
+
+    .timeline {
+      position: relative;
+      list-style: none;
+      margin: 0;
+      padding: 8px 0 8px 0;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 16.5px;
+      top: var(--line-top, 36px);
+      bottom: var(--line-bottom, 36px);
+      width: 3px;
+      border-radius: 99px;
+      background: linear-gradient(180deg, #1f62b0 0%, #2b87a4 28%, #159688 42%, #628832 58%, #74782e 72%, #a07b18 86%, #188a48 100%);
+    }
+    .step {
+      --accent: #1f62b0;
+      scroll-margin-top: 90px;
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr);
+      grid-template-areas: "rail toggle" ". panel";
+      margin-bottom: 10px;
+    }
+    .rail { grid-area: rail; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--page); }
+    .step-toggle {
+      grid-area: toggle;
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px 18px;
+      padding: 12px 14px 12px 10px;
+      border: 1px solid #e1eaf2;
+      border-radius: 12px;
+      background: #fff;
+      text-align: left;
+    }
+    .step-toggle:hover { border-color: #c5d6e8; }
+    .is-open .step-toggle {
+      border-bottom-color: transparent;
+      border-radius: 12px 12px 0 0;
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .day {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      height: 38px;
+      padding: 0 8px 0 10px;
+      margin-right: 14px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 750;
+      border-radius: 8px 2px 2px 8px;
+    }
+    .day::after {
+      content: "";
+      position: absolute;
+      right: -12px;
+      top: 0;
+      border-top: 19px solid transparent;
+      border-bottom: 19px solid transparent;
+      border-left: 13px solid var(--accent);
+    }
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e7f1fb;
+      color: var(--accent);
+    }
+    .icon svg { width: 24px; height: 24px; }
+    .copy-block { min-width: 0; }
+    .title { display: block; color: #173e64; font-size: 16.5px; font-weight: 750; line-height: 1.25; }
+    .desc { display: block; margin-top: 2px; color: #4d657c; font-size: 14.5px; line-height: 1.35; }
+    .step-end { display: flex; align-items: center; gap: 6px; color: #607892; font-size: 13px; font-weight: 750; white-space: nowrap; }
+    .chevron { width: 18px; height: 18px; transition: transform 0.2s ease; }
+    .is-open .chevron { transform: rotate(180deg); }
+    .peek::before { content: "Preview"; }
+    .is-open .peek::before { content: "Hide"; }
+    .panel { grid-area: panel; display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.28s ease; }
+    .is-open .panel { grid-template-rows: 1fr; }
+    .panel-inner { overflow: hidden; }
+    .is-open .panel-inner {
+      padding: 4px 16px 18px;
+      border: 1px solid #d7e3ee;
+      border-top: 1px solid #e7eef5;
+      border-radius: 0 0 12px 12px;
+      background: #fff;
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 0 14px; }
+    .facts div { background: var(--card); border-radius: 10px; padding: 10px 12px; }
+    .facts dt { margin: 0 0 4px; color: #6a8094; font-size: 11px; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; }
+    .facts dd { margin: 0; color: #1c3a56; font-size: 14px; line-height: 1.35; }
+    .detail-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(230px, 0.82fr); gap: 14px; align-items: start; }
+    .sample-label { margin: 0 0 8px; color: #5c738a; font-size: 12px; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; }
+    .email-sheet, .flyer, .note-sheet { border: 1px solid #e1e8f0; border-radius: 12px; background: #fbfcfe; }
+    .email-sheet, .note-sheet { padding: 14px 16px 12px; }
+    .meta-line { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 2px 8px; margin: 0 0 3px; font-size: 14px; line-height: 1.4; }
+    .meta-line .k { padding-top: 2px; color: #6a8094; font-size: 11px; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; }
+    .email-body, .note-body { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6eef5; color: #1e3348; font-size: 14.5px; line-height: 1.5; }
+    .email-body p, .note-body p { margin: 0 0 10px; }
+    .email-body ul, .email-body ol, .note-body ul { margin: 0 0 10px; padding-left: 18px; }
+    .email-body li, .note-body li { margin: 0 0 4px; }
+    .field, body:not(.has-company) [data-token="company"], body:not(.has-date) [data-token="date"] {
+      background: #e7f0fa; color: #143f73; font-weight: 750; border-radius: 4px; padding: 0 0.22em;
+    }
+    .has-company [data-token="company"], .has-date [data-token="date"] { font-weight: 750; }
+    .copy { margin-top: 10px; border: 1px solid #c5d6e8; background: #fff; color: var(--navy); border-radius: 8px; padding: 7px 10px; font-size: 13px; font-weight: 750; }
+    .copy:hover { background: #f3f8fd; }
+    .flyer { overflow: hidden; background: #fff; }
+    .flyer-top { padding: 10px 14px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 750; letter-spacing: 0.05em; text-transform: uppercase; }
+    .flyer h3 { margin: 14px 14px 6px; color: #16324f; font-size: 22px; line-height: 1.15; letter-spacing: -0.02em; }
+    .flyer .lede, .flyer li, .flyer .foot { color: #314c64; font-size: 14px; line-height: 1.4; }
+    .flyer .lede, .flyer ul, .flyer .foot { margin: 0 14px 10px; }
+    .flyer ul { padding-left: 18px; }
+    .flyer li { margin: 0 0 4px; }
+    .flyer .foot { margin-bottom: 14px; color: #5c7388; font-size: 13px; }
+    .flyer ol { margin: 0 14px 14px; padding: 0; list-style: none; counter-reset: piece; }
+    .flyer ol li { counter-increment: piece; display: flex; gap: 8px; align-items: flex-start; margin: 0 0 8px; }
+    .flyer ol li::before {
+      content: counter(piece);
+      flex: none;
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 16%, white);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .doc-row { display: flex; justify-content: space-between; gap: 12px; margin: 0 14px 8px; padding-bottom: 8px; border-bottom: 1px solid #e8eef4; font-size: 14px; }
+    .doc-row span { color: #6a8094; }
+    .doc-row strong { color: #17324f; text-align: right; }
+    .why { margin: 14px 0 0; color: #3d5670; font-size: 14px; line-height: 1.45; }
+    .why strong { color: #16324f; }
+
+    .close {
+      margin-top: 10px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 18px;
+    }
+    .close-inner { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 24px; align-items: center; padding: 28px 0; }
+    .close h2 { margin: 0 0 8px; font-size: 28px; letter-spacing: -0.03em; }
+    .close p { margin: 0; color: rgba(255,255,255,0.88); line-height: 1.5; }
+    .close a { color: #fff; }
+
+    .site-footer { padding: 8px 0 28px; color: #607388; font-size: 13px; line-height: 1.5; }
+    .site-footer p { margin: 0 0 8px; }
+    .sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 34px; }
+      .hero-grid, .journey ol, .close-inner, .detail-grid, .facts { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .plan-head { flex-direction: column; align-items: start; }
+    }
+    @media (max-width: 640px) {
+      .site-header, .wrap { width: auto; }
+      .wrap { width: min(1120px, calc(100% - 28px)); }
+      .site-header { padding: 12px 14px; }
+      .brand small, .peek { display: none; }
+      .site-nav a:not(.nav-cta) { display: none; }
+      .step-toggle { grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; }
+      .icon { display: none; }
+      .day { min-width: 64px; font-size: 14px; }
+      .personalize input { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .panel, .chevron { transition: none; }
+    }
+    @media print {
+      .site-header, .hero-actions, .peek, .chevron, .copy, .text-btn, .nav-cta { display: none !important; }
+      .panel { grid-template-rows: 1fr !important; }
+      .panel-inner { overflow: visible; border: 1px solid #d7e3ee; padding: 4px 16px 18px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#timeline">Skip to the timeline</a>
+  <header class="site-header">
+    <a class="brand" href="#top"><span class="word">Money<span class="dol">$</span>ense</span> <small>Employer preview</small></a>
+    <nav class="site-nav" aria-label="Page">
+      <a href="#how">How to use this</a>
+      <a href="#timeline">30-day plan</a>
+      <a class="nav-cta" href="#timeline">View the plan</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">PCMP rollout · sales support</p>
+        <h1>See how employees are informed before benefits begin.</h1>
+        <p class="lead">Over 30 days, employees receive eight communications. This page shows the sequence, from the first announcement through the morning PCMP becomes active. Open any step to read the sample and see the flyer or notice that goes with it.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#timeline">Explore the eight communications</a>
+          <a class="btn btn-quiet" href="#general-announcement">Start with the announcement</a>
+        </div>
+        <ul class="stats">
+          <li><strong>30 days</strong><span>Before benefits begin</span></li>
+          <li><strong>8 messages</strong><span>Announcement through activation</span></li>
+          <li><strong>One page</strong><span>To share with an employer</span></li>
+        </ul>
+      </div>
+      <aside class="hero-card">
+        <h2>Jump to a communication</h2>
+        <ol>
+          <li><a href="#general-announcement"><span class="chip" style="--accent:#1f62b0">D-30</span><span>General Announcement</span></a></li>
+          <li><a href="#eligibility-notices"><span class="chip" style="--accent:#1f62b0">D-30</span><span>Eligibility Notices</span></a></li>
+          <li><a href="#information-sessions"><span class="chip" style="--accent:#2b87a4">D-26</span><span>Information Sessions</span></a></li>
+          <li><a href="#download-moneysense"><span class="chip" style="--accent:#159688">D-21</span><span>Download Money$ense</span></a></li>
+          <li><a href="#online-orientation"><span class="chip" style="--accent:#628832">D-14</span><span>Online Orientation</span></a></li>
+          <li><a href="#summary-plan-description"><span class="chip" style="--accent:#74782e">D-10</span><span>Summary Plan Description</span></a></li>
+          <li><a href="#final-reminder"><span class="chip" style="--accent:#a07b18">D-7</span><span>Final Reminder</span></a></li>
+          <li><a href="#benefits-active"><span class="chip" style="--accent:#188a48">D0</span><span>Benefits Active</span></a></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section class="journey" id="how">
+    <div class="wrap">
+      <ol>
+        <li><b>01</b><strong>Open the page</strong><p>The employer sees all eight communications on one timeline.</p></li>
+        <li><b>02</b><strong>Choose a step</strong><p>For example, General Announcement on day 30.</p></li>
+        <li><b>03</b><strong>Read the sample</strong><p>A panel opens with the message and a flyer, notice, or card.</p></li>
+        <li><b>04</b><strong>Follow the rollout</strong><p>The path runs through the morning benefits become active.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="plan" id="timeline">
+    <div class="wrap">
+      <div class="plan-head">
+        <div>
+          <h2>PCMP 30-Day Communications Timeline</h2>
+          <p>A step-by-step plan to inform, educate, and engage employees before benefits activation.</p>
+        </div>
+      </div>
+      <form class="personalize" id="personalize" autocomplete="off">
+        <p><strong>Preview it in their name.</strong> Type a company and effective date. This changes the samples on this page only.</p>
+        <label>Company name
+          <input id="company-name" type="text" maxlength="80" placeholder="e.g. Acme Manufacturing">
+        </label>
+        <label>Effective date
+          <input id="effective-date" type="text" maxlength="40" placeholder="e.g. May 1, 2026">
+        </label>
+        <button type="button" class="text-btn" id="clear-preview">Reset</button>
+      </form>
+
+      <ol class="timeline">
+        <li class="step" id="general-announcement" style="--accent:#1f62b0">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-announcement">
+            <span class="day">D-30</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10h2.4L14 6.2v11.6L6.9 14H4.5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"></path><path d="M16.2 9.2a3.2 3.2 0 0 1 0 5.6M18 7.1a6 6 0 0 1 0 9.8"></path><path d="M7.6 14.2l.8 2.8a1.2 1.2 0 0 0 1.6.7l1-.4"></path></svg></span>
+            <span class="copy-block"><span class="title">General Announcement</span><span class="desc">Introduce PCMP to all employees and highlight key benefits.</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-announcement" role="region" aria-label="General Announcement sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>All employees</dd></div>
+                <div><dt>How it is sent</dt><dd>Company-wide email, with an optional flyer or intranet post</dd></div>
+                <div><dt>What you provide</dt><dd>Company name, effective date, and the HR contact employees should use</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span>All employees</span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>PCMP is coming on <span data-token="date">[Effective Date]</span></span></p>
+                    <div class="email-body">
+                      <p>Hello,</p>
+                      <p>We are introducing PCMP. For employees who are eligible, participation is scheduled to begin on <span data-token="date">[Effective Date]</span>.</p>
+                      <p>This note is an overview for everyone. It does not confirm your personal eligibility. Employees who qualify will receive their own notice.</p>
+                      <p>Over the next 30 days you may receive:</p>
+                      <ul>
+                        <li>A personal eligibility notice, if you qualify, with an initial Summary Plan Description</li>
+                        <li>An invitation to a live information session, plus a replay if you cannot attend</li>
+                        <li>Steps to download the Money$ense app and join the PCMP wellness group</li>
+                        <li>A reminder to complete the PCMP online orientation</li>
+                        <li>The official Summary Plan Description to review before the effective date</li>
+                      </ul>
+                      <p>You do not need to take action today. Please watch for the messages that apply to you.</p>
+                      <p>Questions can go to <span class="field">[HR Contact Name]</span> at <span class="field">[HR Email]</span>.</p>
+                      <p><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Sample flyer</p>
+                  <aside class="flyer">
+                    <div class="flyer-top">All employees</div>
+                    <h3>PCMP is on the way</h3>
+                    <p class="lede">Benefits begin <span data-token="date">[Effective Date]</span> for eligible employees.</p>
+                    <ul>
+                      <li>Learn what PCMP is</li>
+                      <li>Watch for your eligibility notice</li>
+                      <li>Get ready before day one</li>
+                    </ul>
+                    <p class="foot">A short series of messages will follow over the next 30 days. No action is needed today.</p>
+                  </aside>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> Everyone hears about PCMP at the same time, before personal notices go out, so the rollout does not feel sudden.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="eligibility-notices" style="--accent:#1f62b0">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-eligibility">
+            <span class="day">D-30</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="9" r="2.2"></circle><circle cx="16" cy="9.2" r="1.7"></circle><path d="M3.8 17.5c.6-2.3 2.4-3.4 4.7-3.4s4.1 1.1 4.7 3.4"></path><path d="M13.2 14.4c1.5-.3 3.2.1 4.1 1.6.6 1 .9 1.6.9 1.6"></path></svg></span>
+            <span class="copy-block"><span class="title">Eligibility Notices</span><span class="desc">Send individual notices of eligibility and initial Summary Plan Description (SPD).</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-eligibility" role="region" aria-label="Eligibility Notices sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>Eligible employees only, one person at a time</dd></div>
+                <div><dt>How it is sent</dt><dd>Personal email. Paper mail as well when the plan requires it</dd></div>
+                <div><dt>What you provide</dt><dd>The eligible-employee list and the initial SPD from your plan administrator</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span><span class="field">[First Name]</span></span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>Your PCMP eligibility notice</span></p>
+                    <div class="email-body">
+                      <p>Hello <span class="field">[First Name]</span>,</p>
+                      <p>This notice is just for you. Based on the plan rules, you are eligible for PCMP.</p>
+                      <p>Your participation is scheduled to begin on <span data-token="date">[Effective Date]</span>. An initial Summary Plan Description is included with this notice so you can start reading how the plan works.</p>
+                      <ul>
+                        <li>Read this notice and the enclosed Summary Plan Description</li>
+                        <li>Watch for a separate invitation to an information session</li>
+                        <li>Contact <span class="field">[HR Contact Name]</span> at <span class="field">[HR Email]</span> if any of your information looks incorrect</li>
+                      </ul>
+                      <p>This message was sent only to employees who meet the eligibility rules. The Summary Plan Description, not this email, is the source for plan details.</p>
+                      <p><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Sample notice</p>
+                  <aside class="flyer">
+                    <div class="flyer-top">Individual notice</div>
+                    <h3>Notice of eligibility</h3>
+                    <div class="doc-row"><span>Employee</span><strong class="field">[First Name]</strong></div>
+                    <div class="doc-row"><span>Plan</span><strong>PCMP</strong></div>
+                    <div class="doc-row"><span>Status</span><strong>Eligible</strong></div>
+                    <div class="doc-row"><span>Effective</span><strong data-token="date">[Effective Date]</strong></div>
+                    <div class="doc-row"><span>Enclosed</span><strong>Initial Summary Plan Description</strong></div>
+                    <p class="foot">Sent only to employees who qualify. The SPD is supplied by the plan administrator.</p>
+                  </aside>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> Same day as the general announcement, but private. Only people who qualify receive this notice and the initial SPD.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="information-sessions" style="--accent:#2b87a4">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-sessions">
+            <span class="day">D-26</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="12" height="9" rx="1.2"></rect><path d="M6 17.5h7M9.5 13.5v4"></path><circle cx="17.5" cy="15.5" r="2.1"></circle><path d="M14.8 20c.4-1.5 1.4-2.2 2.7-2.2s2.3.7 2.7 2.2"></path></svg></span>
+            <span class="copy-block"><span class="title">Promote Information Sessions</span><span class="desc">Invite employees to live info sessions (with replay options).</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-sessions" role="region" aria-label="Information Sessions sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>All employees, so people who are unsure can attend and ask</dd></div>
+                <div><dt>How it is sent</dt><dd>Email plus a calendar invitation. The replay link is in the same message</dd></div>
+                <div><dt>What you provide</dt><dd>Session dates, the meeting link, and who will host</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span>All employees</span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>You are invited: PCMP information session</span></p>
+                    <div class="email-body">
+                      <p>Hello,</p>
+                      <p>Join a live session to see how PCMP works and to ask questions before <span data-token="date">[Effective Date]</span>.</p>
+                      <p><strong>Live session</strong><br><span class="field">[Session Date]</span><br><span class="field">[Session Time]</span><br>Join: <span class="field">[Session Link]</span></p>
+                      <p>Cannot attend live? A replay will be available at <span class="field">[Replay Link]</span> within one business day.</p>
+                      <ul>
+                        <li>What PCMP is and how eligibility works</li>
+                        <li>What employees are asked to do before <span data-token="date">[Effective Date]</span></li>
+                        <li>How to download the Money$ense app and join the PCMP wellness group</li>
+                        <li>Where to read the Summary Plan Description</li>
+                      </ul>
+                      <p>Come with questions. Plan details in the session follow the Summary Plan Description.</p>
+                      <p><span class="field">[HR Contact Name]</span><br><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Sample flyer</p>
+                  <aside class="flyer">
+                    <div class="flyer-top">Live or replay</div>
+                    <h3>PCMP information session</h3>
+                    <div class="doc-row"><span>When</span><strong class="field">[Session Date]</strong></div>
+                    <div class="doc-row"><span>Time</span><strong class="field">[Session Time]</strong></div>
+                    <div class="doc-row"><span>Join</span><strong class="field">[Session Link]</strong></div>
+                    <div class="doc-row"><span>Replay</span><strong class="field">[Replay Link]</strong></div>
+                    <p class="foot">Bring questions. If you cannot attend live, the replay is in the same invitation.</p>
+                  </aside>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> Four days after the announcement, employees can hear it explained and ask questions, with a replay for every shift.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="download-moneysense" style="--accent:#159688">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-app">
+            <span class="day">D-21</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3.5" width="10" height="17" rx="2"></rect><path d="M11 18.5h2"></path></svg></span>
+            <span class="copy-block"><span class="title">Push to Download Money$ense</span><span class="desc">Encourage employees to download the Money$ense app and join the PCMP wellness group.</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-app" role="region" aria-label="Download Money$ense sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>Eligible employees</dd></div>
+                <div><dt>How it is sent</dt><dd>Email, after the information session so the ask is expected</dd></div>
+                <div><dt>What you provide</dt><dd>The wellness group name and join code employees should use</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span><span class="field">[First Name]</span></span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>Download Money$ense and join the PCMP wellness group</span></p>
+                    <div class="email-body">
+                      <p>Hello <span class="field">[First Name]</span>,</p>
+                      <p>Please download the Money$ense app and join the PCMP wellness group before <span data-token="date">[Effective Date]</span>. Doing this now means you are set up before benefits begin.</p>
+                      <ol>
+                        <li>Download the Money$ense app.</li>
+                        <li>Create your account with your work email.</li>
+                        <li>Join the <span data-token="company">[Company Name]</span> PCMP wellness group with code <span class="field">[Group Code]</span>.</li>
+                      </ol>
+                      <p>The group is for eligible employees. Session replays, orientation reminders, and updates are posted there.</p>
+                      <p>Need help getting in? Contact <span class="field">[HR Email]</span>.</p>
+                      <p><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Sample card</p>
+                  <aside class="flyer">
+                    <div class="flyer-top">Money$ense</div>
+                    <h3>Join the PCMP wellness group</h3>
+                    <p class="lede">For eligible employees at <span data-token="company">[Company Name]</span>.</p>
+                    <ol>
+                      <li>Download the Money$ense app</li>
+                      <li>Sign up with your work email</li>
+                      <li>Enter group code <span class="field">[Group Code]</span></li>
+                    </ol>
+                  </aside>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> The app ask comes after employees have heard what PCMP is, and before orientation, so the group is ready when the course opens.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="online-orientation" style="--accent:#628832">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-orientation">
+            <span class="day">D-14</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 5l9 4.5-9 4.5L3 9.5z"></path><path d="M7 11.8v3.4c0 .3 2.2 2.3 5 2.3s5-2 5-2.3v-3.4"></path><path d="M21 10v5"></path></svg></span>
+            <span class="copy-block"><span class="title">Push to Complete Online Orientation</span><span class="desc">Encourage employees to complete the PCMP online education course.</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-orientation" role="region" aria-label="Online Orientation sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>Eligible employees</dd></div>
+                <div><dt>How it is sent</dt><dd>Email with a direct link to the course</dd></div>
+                <div><dt>What you provide</dt><dd>The course link and about how long it takes. People who already finished can ignore it</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span><span class="field">[First Name]</span></span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>Please complete your PCMP orientation</span></p>
+                    <div class="email-body">
+                      <p>Hello <span class="field">[First Name]</span>,</p>
+                      <p>Please complete the PCMP online orientation before <span data-token="date">[Effective Date]</span>. It takes about <span class="field">[Course Length]</span> and explains the benefit in plain language.</p>
+                      <p>Start here: <span class="field">[Orientation Link]</span></p>
+                      <ul>
+                        <li>How PCMP works for eligible employees</li>
+                        <li>What to expect on <span data-token="date">[Effective Date]</span></li>
+                        <li>How the Money$ense app and wellness group are used</li>
+                        <li>Who to contact with questions</li>
+                      </ul>
+                      <p>When you finish, you do not need to send anything back. If you have already completed the orientation, you can ignore this note.</p>
+                      <p><span class="field">[HR Contact Name]</span><br><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Sample course card</p>
+                  <aside class="flyer">
+                    <div class="flyer-top">Online orientation</div>
+                    <h3>PCMP education course</h3>
+                    <div class="doc-row"><span>Length</span><strong class="field">[Course Length]</strong></div>
+                    <div class="doc-row"><span>Finish by</span><strong data-token="date">[Effective Date]</strong></div>
+                    <div class="doc-row"><span>Start</span><strong class="field">[Orientation Link]</strong></div>
+                    <p class="foot">Completion is recorded. Employees who are already done can skip this message.</p>
+                  </aside>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> Two weeks out, the course is the main thing left to do besides reading the plan document.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="summary-plan-description" style="--accent:#74782e">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-spd">
+            <span class="day">D-10</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.8h7l4 4V20a1.2 1.2 0 0 1-1.2 1.2H7A1.2 1.2 0 0 1 5.8 20V5A1.2 1.2 0 0 1 7 3.8z"></path><path d="M14 3.8V8h4.2M8.5 12.5h7M8.5 16h5"></path></svg></span>
+            <span class="copy-block"><span class="title">Deliver Summary Plan Description (SPD)</span><span class="desc">Provide the official SPD and remind employees to review plan details.</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-spd" role="region" aria-label="Summary Plan Description sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>Eligible employees</dd></div>
+                <div><dt>How it is sent</dt><dd>Personal email with the official SPD attached or linked</dd></div>
+                <div><dt>What you provide</dt><dd>The official SPD from your plan administrator, and where employees should open it</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span><span class="field">[First Name]</span></span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>Please review your PCMP Summary Plan Description</span></p>
+                    <div class="email-body">
+                      <p>Hello <span class="field">[First Name]</span>,</p>
+                      <p>Please review your Summary Plan Description for PCMP before benefits begin on <span data-token="date">[Effective Date]</span>.</p>
+                      <p>The Summary Plan Description is the official description of the plan. Please use that document, not this email, for plan details.</p>
+                      <p>Open your SPD: <span class="field">[SPD Link]</span></p>
+                      <p>If something is unclear, contact <span class="field">[HR Contact Name]</span> at <span class="field">[HR Email]</span>, or use the contact listed inside the SPD.</p>
+                      <p><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Cover sheet only</p>
+                  <aside class="flyer">
+                    <div class="flyer-top">Official plan document</div>
+                    <h3>Summary Plan Description</h3>
+                    <div class="doc-row"><span>Plan</span><strong>PCMP</strong></div>
+                    <div class="doc-row"><span>For</span><strong data-token="company">[Company Name]</strong></div>
+                    <div class="doc-row"><span>Review by</span><strong data-token="date">[Effective Date]</strong></div>
+                    <p class="foot">This page shows the cover note employees receive. The SPD itself is supplied separately and is not reproduced here.</p>
+                  </aside>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> Eligible employees already received an initial SPD with their eligibility notice. This follow-up puts the official document in front of them again, with ten days left to ask questions.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="final-reminder" style="--accent:#a07b18">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-reminder">
+            <span class="day">D-7</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5a6 6 0 1 1 12 0c0 4 1.4 5.2 1.4 5.2H4.6S6 13.5 6 9.5z"></path><path d="M10 18.2a2 2 0 0 0 4 0"></path></svg></span>
+            <span class="copy-block"><span class="title">Final Reminder</span><span class="desc">Remind employees of the upcoming effective date and key next steps.</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-reminder" role="region" aria-label="Final Reminder sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>Eligible employees</dd></div>
+                <div><dt>How it is sent</dt><dd>Email. An optional note gives managers a 30-second script</dd></div>
+                <div><dt>What you provide</dt><dd>Confirmation of the effective date. The manager note is optional</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span><span class="field">[First Name]</span></span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>One week until PCMP begins</span></p>
+                    <div class="email-body">
+                      <p>Hello <span class="field">[First Name]</span>,</p>
+                      <p>PCMP becomes active on <span data-token="date">[Effective Date]</span>, one week from today. Here is a short checklist:</p>
+                      <ul>
+                        <li>Confirm you received your eligibility notice</li>
+                        <li>Read the Summary Plan Description: <span class="field">[SPD Link]</span></li>
+                        <li>Finish the online orientation: <span class="field">[Orientation Link]</span></li>
+                        <li>Download Money$ense and join the PCMP wellness group with code <span class="field">[Group Code]</span></li>
+                      </ul>
+                      <p>If you have already done these, you are set. Nothing else is required before the effective date.</p>
+                      <p>Questions: <span class="field">[HR Contact Name]</span>, <span class="field">[HR Email]</span>.</p>
+                      <p><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Optional manager note</p>
+                  <article class="note-sheet">
+                    <div class="note-body">
+                      <p>You do not need to explain the plan. If it comes up this week, this is enough:</p>
+                      <p>PCMP starts on <span data-token="date">[Effective Date]</span>. Employees who are eligible have already received their notice. The reminders are to read the Summary Plan Description, finish the online orientation, and download the Money$ense app to join the PCMP wellness group.</p>
+                      <p>Questions go to <span class="field">[HR Contact Name]</span> at <span class="field">[HR Email]</span>.</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy manager note</button>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> One checklist, not a new topic. People who are finished can ignore it. Managers are asked not to interpret eligibility or plan terms.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="step" id="benefits-active" style="--accent:#188a48">
+          <div class="rail"><span class="dot"></span></div>
+          <button class="step-toggle" type="button" aria-expanded="false" aria-controls="panel-active">
+            <span class="day">D0</span>
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"></circle><path d="M8.2 12.2l2.4 2.4 5.2-5.2"></path></svg></span>
+            <span class="copy-block"><span class="title">Benefits Active!</span><span class="desc">PCMP is now active for eligible employees!</span></span>
+            <span class="step-end"><span class="peek"></span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span>
+          </button>
+          <div class="panel" id="panel-active" role="region" aria-label="Benefits Active sample">
+            <div class="panel-inner">
+              <dl class="facts">
+                <div><dt>Who receives it</dt><dd>Eligible employees</dd></div>
+                <div><dt>How it is sent</dt><dd>Email the morning of the effective date</dd></div>
+                <div><dt>What you provide</dt><dd>A send time on the morning benefits begin</dd></div>
+              </dl>
+              <div class="detail-grid">
+                <div>
+                  <p class="sample-label">Sample message</p>
+                  <article class="email-sheet">
+                    <p class="meta-line"><span class="k">From</span><span><span data-token="company">[Company Name]</span> Human Resources</span></p>
+                    <p class="meta-line"><span class="k">To</span><span><span class="field">[First Name]</span></span></p>
+                    <p class="meta-line"><span class="k">Subject</span><span>PCMP is active today</span></p>
+                    <div class="email-body">
+                      <p>Hello <span class="field">[First Name]</span>,</p>
+                      <p>PCMP is now active for you as of today, <span data-token="date">[Effective Date]</span>.</p>
+                      <ul>
+                        <li>Use the benefit described in your Summary Plan Description</li>
+                        <li>Open the Money$ense app and visit the PCMP wellness group</li>
+                        <li>Revisit the orientation any time: <span class="field">[Orientation Link]</span></li>
+                        <li>Contact <span class="field">[HR Contact Name]</span> at <span class="field">[HR Email]</span> with questions</li>
+                      </ul>
+                      <p>Thank you for taking the time to get ready.</p>
+                      <p><span data-token="company">[Company Name]</span> Human Resources</p>
+                    </div>
+                  </article>
+                  <button class="copy" type="button">Copy sample message</button>
+                </div>
+                <div>
+                  <p class="sample-label">Sample card</p>
+                  <aside class="flyer">
+                    <div class="flyer-top">Effective today</div>
+                    <h3>PCMP is active</h3>
+                    <p class="lede">For eligible employees of <span data-token="company">[Company Name]</span>.</p>
+                    <div class="doc-row"><span>Effective</span><strong data-token="date">[Effective Date]</strong></div>
+                    <ul>
+                      <li>Read the benefit in your SPD</li>
+                      <li>Open the Money$ense wellness group</li>
+                      <li>Questions go to HR</li>
+                    </ul>
+                  </aside>
+                </div>
+              </div>
+              <p class="why"><strong>Why this day.</strong> Eligible employees get a clear confirmation that the benefit has started, and where to go if they still have a question.</p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap close-inner">
+      <div>
+        <h2>A link an employer can review before they decide.</h2>
+        <p>Share this page in a sales conversation. It shows the communications employees receive. It does not send those messages, enroll anyone, or replace the Summary Plan Description.</p>
+      </div>
+      <p>Samples are a starting point. Bracketed fields are filled in for each employer. Eligibility, plan terms, and the official SPD come from the employer and the plan administrator.</p>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Money$ense · PCMP 30-day employee communications preview</p>
+    </div>
+  </footer>
+  <p class="sr" id="copy-status" role="status"></p>
+
+  <script>
+    const steps = Array.from(document.querySelectorAll(".step"));
+    const companyInput = document.getElementById("company-name");
+    const dateInput = document.getElementById("effective-date");
+    const status = document.getElementById("copy-status");
+
+    function setOpen(step, open) {
+      const button = step.querySelector(".step-toggle");
+      const panel = step.querySelector(".panel");
+      step.classList.toggle("is-open", open);
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.inert = !open;
+    }
+
+    function openOnly(step) {
+      steps.forEach((item) => setOpen(item, item === step));
+      if (step) history.replaceState(null, "", "#" + step.id);
+    }
+
+    steps.forEach((step) => {
+      setOpen(step, false);
+      step.querySelector(".step-toggle").addEventListener("click", () => {
+        if (step.classList.contains("is-open")) {
+          setOpen(step, false);
+          history.replaceState(null, "", location.pathname + location.search);
+        } else {
+          openOnly(step);
+        }
+      });
+    });
+
+    function openFromHash(scroll) {
+      const id = location.hash.replace("#", "");
+      const step = id && document.getElementById(id);
+      if (step && step.classList.contains("step")) {
+        steps.forEach((item) => setOpen(item, item === step));
+        if (scroll) step.scrollIntoView({ block: "start" });
+        return true;
+      }
+      return false;
+    }
+
+    openFromHash(true);
+    window.addEventListener("hashchange", () => {
+      if (!openFromHash(true)) steps.forEach((item) => setOpen(item, false));
+    });
+
+    const timeline = document.querySelector(".timeline");
+    function alignLine() {
+      const dots = [...timeline.querySelectorAll(".dot")];
+      if (!dots.length) return;
+      const bounds = timeline.getBoundingClientRect();
+      const first = dots[0].getBoundingClientRect();
+      const last = dots[dots.length - 1].getBoundingClientRect();
+      timeline.style.setProperty("--line-top", (first.top + first.height / 2 - bounds.top) + "px");
+      timeline.style.setProperty("--line-bottom", (bounds.bottom - (last.top + last.height / 2)) + "px");
+    }
+    alignLine();
+    new ResizeObserver(alignLine).observe(timeline);
+
+    function applyTokens() {
+      const company = companyInput.value.trim();
+      const date = dateInput.value.trim();
+      document.body.classList.toggle("has-company", company.length > 0);
+      document.body.classList.toggle("has-date", date.length > 0);
+      document.querySelectorAll("[data-token='company']").forEach((el) => {
+        el.textContent = company || "[Company Name]";
+      });
+      document.querySelectorAll("[data-token='date']").forEach((el) => {
+        el.textContent = date || "[Effective Date]";
+      });
+    }
+    companyInput.addEventListener("input", applyTokens);
+    dateInput.addEventListener("input", applyTokens);
+    document.getElementById("personalize").addEventListener("submit", (event) => event.preventDefault());
+    document.getElementById("clear-preview").addEventListener("click", () => {
+      companyInput.value = "";
+      dateInput.value = "";
+      applyTokens();
+      companyInput.focus();
+    });
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (error) {
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.left = "-999px";
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+      }
+    }
+
+    document.querySelectorAll(".copy").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const sheet = button.previousElementSibling;
+        const text = sheet.innerText.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+        await copyText(text);
+        const original = button.textContent;
+        button.textContent = "Copied";
+        status.textContent = original + " copied";
+        window.setTimeout(() => { button.textContent = original; }, 1600);
+      });
+    });
+  </script>
+</body>
+</html>
